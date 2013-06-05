@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <p class="row-fluid">
+        <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(4)">d4</button>
+        <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(6)">d6</button>
+        <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(8)">d8</button>
+        <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(10)">d10</button>
+        <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(12)">d12</button>
+        <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(20)">d20</button>
+    </p>
+    <div class="row-fluid">
+        <p class="roll-value" ng-repeat="(rollKey, roll) in reverse(rolls)" ng-class="{'last-roll': rollKey == 0}">{{roll}}</p>
+    </div>
+</div>

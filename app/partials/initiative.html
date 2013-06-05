@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <form class="form-inline" ng-submit="addChar()">
+            <input type="text" class="input-large" placeholder="Nome" ng-model="newChar.name" required>
+            <input type="text" class="input-mini" placeholder="Iniziativa" ng-model="newChar.initiative" required>
+            <input type="text" class="input-mini" placeholder="PF" ng-model="newChar.hp" required>
+            <button class="btn btn-primary" type="submit"><i class="icon-plus"></i></button>
+        </form>
+        <table class="table">
+            <tr>
+                <th width="10%"># Iniziativa</th>
+                <th width="50%">Nome</th>
+                <th width="30%">PF</th>
+                <th width="5%"></th>
+            </tr>
+            <tr ng-repeat="char in chars | orderBy:'-initiative'">
+                <td>{{char.initiative}}</td>
+                <td>{{char.name}}</td>
+                <td>
+                  <span ng-class="hpClass(char.hp, char.hpMax)" class="badge">{{char.hp}} / {{char.hpMax}}</span>
+                  <span class="badge" ng-click="char.hpOP = '+'" ng-class="{'badge-info': char.hpOP == '+'}"><i class="icon-plus"></i></span>
+                  <span class="badge" ng-click="char.hpOP = '-'" ng-class="{'badge-info': char.hpOP == '-'}"><i class="icon-minus"></i></span>
+                  <form class="form-inline hp-form" ng-submit="newHp(char)">
+                    <input type="text" class="input-mini" ng-model="char.hpMod" ng-show="char.hpOP">
+                  </form>
+                </td>
+                <td>
+                  <a class="btn btn-danger btn-small" ng-click="removeChar(char)"><i class="icon-remove-sign icon-large"></i></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row"></div>
+</div>
