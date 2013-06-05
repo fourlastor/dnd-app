@@ -70,6 +70,10 @@ angular.module('dndApp.controllers', [])
       $scope.rolls.push(_.random(1, dice));
     }
 
+    $scope.clear = function() {
+      $scope.rolls = [];
+    }
+
     $scope.reverse = function(array) {
       var copy = [].concat(array);
       return copy.reverse();

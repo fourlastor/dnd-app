@@ -8,6 +8,11 @@
         <button class="btn btn-inverse btn-block btn-large span2" ng-click="roll(20)">d20</button>
     </p>
     <div class="row-fluid">
-        <p class="roll-value" ng-repeat="(rollKey, roll) in reverse(rolls)" ng-class="{'last-roll': rollKey == 0}">{{roll}}</p>
+        <div class="span1">
+            <button class="btn" ng-click="clear()"><i class="icon-ban-circle"></i></button>
+        </div>
+        <div class="span10">
+            <p class="roll-value" ng-repeat="(rollKey, roll) in reverse(rolls)" ng-class="{'last-roll': rollKey == 0}">{{roll}}</p>    
+        </div>
     </div>
 </div>
