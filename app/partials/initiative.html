@@ -18,10 +18,8 @@
                 <td>{{char.name}}</td>
                 <td>
                   <span ng-class="hpClass(char.hp, char.hpMax)" class="badge">{{char.hp}} / {{char.hpMax}}</span>
-                  <span class="badge" ng-click="char.hpOP = '+'" ng-class="{'badge-info': char.hpOP == '+'}"><i class="icon-plus"></i></span>
-                  <span class="badge" ng-click="char.hpOP = '-'" ng-class="{'badge-info': char.hpOP == '-'}"><i class="icon-minus"></i></span>
                   <form class="form-inline hp-form" ng-submit="newHp(char)">
-                    <input type="text" class="input-mini" ng-model="char.hpMod" ng-show="char.hpOP">
+                    <input type="text" class="input-mini" ng-model="char.hpMod">
                   </form>
                 </td>
                 <td>

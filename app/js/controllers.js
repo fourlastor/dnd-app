@@ -19,13 +19,7 @@ angular.module('dndApp.controllers', [])
       newChar.name = $scope.newChar.name;
       var match;
       if(match = $scope.newChar.initiative.match(/(\+|-)(\d+)/))
-      {
-        var roll = _.random(1,20);
-        if(match[1] == '+')
-          newChar.initiative = roll + parseInt(match[2]);
-        else
-          newChar.initiative = roll - parseInt(match[2]);
-      }
+          newChar.initiative = roll + $scope.newChar.initiative;
       else
         newChar.initiative = parseInt($scope.newChar.initiative);
 
@@ -54,11 +48,7 @@ angular.module('dndApp.controllers', [])
     }
 
     $scope.newHp = function(char) {
-      if(char.hpOP == '+')
         char.hp = Math.min(char.hp + parseInt(char.hpMod), char.hpMax);
-      else if (char.hpOP == '-')
-        char.hp = Math.max(char.hp - parseInt(char.hpMod), -10);
-      char.hpOP = '';
       char.hpMod = '';
     }
 
