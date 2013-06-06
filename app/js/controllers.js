@@ -19,7 +19,7 @@ angular.module('dndApp.controllers', [])
       newChar.name = $scope.newChar.name;
       var match;
       if(match = $scope.newChar.initiative.match(/(\+|-)(\d+)/))
-          newChar.initiative = roll + $scope.newChar.initiative;
+          newChar.initiative = _.random(1,20) + parseInt($scope.newChar.initiative);
       else
         newChar.initiative = parseInt($scope.newChar.initiative);
 
