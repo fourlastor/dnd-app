@@ -44,11 +44,12 @@ angular.module('dndApp.controllers', [])
     $scope.hpClass = function(hp, hpMax) {
       if(hp < hpMax / 4) return 'badge-important';
       if(hp < hpMax / 2) return 'badge-warning';
-      else return 'badge-success';
+      if(hp <= hpMax) return 'badge-success';
+      else return 'badge-info';
     }
 
     $scope.newHp = function(char) {
-        char.hp = Math.min(char.hp + parseInt(char.hpMod), char.hpMax);
+        char.hp += parseInt(char.hpMod);
       char.hpMod = '';
     }
 
