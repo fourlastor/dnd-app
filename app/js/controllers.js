@@ -50,6 +50,7 @@ angular.module('dndApp.controllers', [])
 
     $scope.newHp = function(char) {
         char.hp += parseInt(char.hpMod);
+        char.hp = Math.min(char.hp, char.hpMax);
       char.hpMod = '';
     }
 
