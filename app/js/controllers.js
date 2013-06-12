@@ -56,10 +56,20 @@ angular.module('dndApp.controllers', [])
 
   }])
   .controller('DicesCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-    $rootScope.currentTab = 'dices';
+    // $rootScope.currentTab = 'dices';
     $scope.rolls = [];
+    $scope.popover = {
+      "content": "Hello Popover<br />This is a multiline message!",
+      "saved": false
+    };
+
     $scope.roll = function(dice) {
       $scope.rolls.push(_.random(1, dice));
+    }
+
+    $scope.lastRoll = function() {
+      return _.last($scope.rolls);
+      // return ($scope.rolls.length)?$scope.rolls[$scope.rolls.length-1]:'';
     }
 
     $scope.clear = function() {
@@ -70,4 +80,9 @@ angular.module('dndApp.controllers', [])
       var copy = [].concat(array);
       return copy.reverse();
     }
+
+    $scope.rollsHistory = function() {
+      return $scope.rolls.join(" ");
+    }
+
   }]);

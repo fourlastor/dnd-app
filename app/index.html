@@ -16,7 +16,6 @@
       <div class="navbar-inner">
         <a href="#" class="brand">Strumenti DnD</a>
         <ul class="nav">
-          <li ng-class="{'active': currentTab == 'dices'}"><a href="#/dices">Dadi</a></li>
           <li ng-class="{'active': currentTab == 'initiative'}"><a href="#/initiative">Iniziativa</a></li>
         </ul>
       </div>
@@ -30,7 +29,26 @@
 
   
   <footer id="footer">
-    <p>DnDApp: v<span app-version></span></p>
+    <div class="row-fluid">
+      <p class="span3">DnDApp: v<span app-version></span></p>
+      <div class="span3 offset6" ng-controller="DicesCtrl">
+        <div class="input-prepend input-append">
+          <div class="btn-group">
+            <button ng-click="roll(4)" class="btn">d4</button>
+            <button ng-click="roll(6)" class="btn">d6</button>
+            <button ng-click="roll(8)" class="btn">d8</button>
+            <button ng-click="roll(10)" class="btn">d10</button>
+            <button ng-click="roll(12)" class="btn">d12</button>
+            <button ng-click="roll(20)" class="btn">d20</button>
+          </div>
+          <input type="text" id="last-roll" class="input-mini text-center" value="{{lastRoll()}}" readonly="readonly">
+          <div class="btn-group">
+            <button id="rolls-history" class="btn btn-info" popover="{{rollsHistory()}}" popover-placement="top" popover-trigger="mouseenter"><i class="icon-ellipsis-horizontal"></i></button>
+            <button class="btn btn-danger" ng-click="clear()"><i class="icon-ban-circle"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
 
@@ -39,6 +57,7 @@
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/underscore/underscore-min.js"></script>
+  <script src="lib/angular-ui/ui-bootstrap-custom-tpls-0.3.0.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
