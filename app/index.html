@@ -34,13 +34,7 @@
         <div class="span9 text-right" ng-controller="DicesCtrl">
           <div class="input-prepend input-append">
             <div class="btn-group">
-              <button ng-click="roll(4)" class="btn">d4</button>
-              <button ng-click="roll(6)" class="btn">d6</button>
-              <button ng-click="roll(8)" class="btn">d8</button>
-              <button ng-click="roll(10)" class="btn">d10</button>
-              <button ng-click="roll(12)" class="btn">d12</button>
-              <button ng-click="roll(20)" class="btn">d20</button>
-              <button ng-click="roll(100)" class="btn">d100</button>
+              <button ng-repeat="diceSize in [4,6,8,10,12,20,100]" ng-click="roll(diceSize)" class="btn">d{{diceSize}}</button>
             </div>
             <input type="text" id="last-roll" class="input-mini text-center" value="{{lastRoll()}}" readonly="readonly">
             <div class="btn-group">
