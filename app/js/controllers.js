@@ -69,16 +69,10 @@ angular.module('dndApp.controllers', [])
 
     $scope.lastRoll = function() {
       return _.last($scope.rolls);
-      // return ($scope.rolls.length)?$scope.rolls[$scope.rolls.length-1]:'';
     }
 
     $scope.clear = function() {
       $scope.rolls = [];
-    }
-
-    $scope.reverse = function(array) {
-      var copy = [].concat(array);
-      return copy.reverse();
     }
 
     $scope.rollsHistory = function() {
