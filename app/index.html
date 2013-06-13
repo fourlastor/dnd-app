@@ -31,15 +31,19 @@
   <footer id="footer" class="container-fluid">
       <div class="row-fluid">
         <p class="span3">DnDApp: v<span app-version></span></p>
-        <div class="span9 text-right" ng-controller="DicesCtrl">
+        <div class="span9 text-right" ng-controller="ToolbarCtrl">
           <div class="input-prepend input-append">
             <div class="btn-group">
+              <button class="btn btn-inverse" ng-click="openDMScreen()"><i class="icon-question-sign"></i></button>
+              <div modal="DMScreenIsOpen" close="closeDMScreen()">
+                <div ng-include src="'partials/dmscreen.html'"></div>
+              </div>
               <button ng-repeat="diceSize in [4,6,8,10,12,20,100]" ng-click="roll(diceSize)" class="btn">d{{diceSize}}</button>
             </div>
             <input type="text" id="last-roll" class="input-mini text-center" value="{{lastRoll()}}" readonly="readonly">
             <div class="btn-group">
               <button id="rolls-history" class="btn btn-info" popover="{{rollsHistory()}}" popover-placement="top" popover-trigger="mouseenter"><i class="icon-ellipsis-horizontal"></i></button>
-              <button class="btn btn-danger" ng-click="clear()"><i class="icon-ban-circle"></i></button>
+              <button class="btn btn-danger" ng-click="clearRolls()"><i class="icon-ban-circle"></i></button>
             </div>
           </div>
         </div>

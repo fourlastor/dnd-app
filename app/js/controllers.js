@@ -55,13 +55,17 @@ angular.module('dndApp.controllers', [])
     }
 
   }])
-  .controller('DicesCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-    // $rootScope.currentTab = 'dices';
+  .controller('ToolbarCtrl', ['$scope', function($scope) {
     $scope.rolls = [];
-    $scope.popover = {
-      "content": "Hello Popover<br />This is a multiline message!",
-      "saved": false
-    };
+    $scope.DMScreenIsOpen = false;
+
+    $scope.openDMScreen = function() {
+      $scope.DMScreenIsOpen = true;
+    }
+
+    $scope.closeDMScreen = function() {
+      $scope.DMScreenIsOpen = false;
+    }
 
     $scope.roll = function(dice) {
       $scope.rolls.push(_.random(1, dice));
@@ -71,7 +75,7 @@ angular.module('dndApp.controllers', [])
       return _.last($scope.rolls);
     }
 
-    $scope.clear = function() {
+    $scope.clearRolls = function() {
       $scope.rolls = [];
     }
 
