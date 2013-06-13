@@ -40,17 +40,9 @@ body {
     margin-top: 1em;
 }
 
-
-/* Dices Controller */
-.roll-value {
-  font-size: 10em;
-  line-height: 1em;
-  text-align: center;
-  color: #ddd;
-}
-
-.last-roll {
-  color: #333;
+.modal.dm-screen {
+  width: 80%;
+  margin-left: -40%;
 }
 
 /* Initiative Controller */

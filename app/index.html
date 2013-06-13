@@ -35,7 +35,7 @@
           <div class="input-prepend input-append">
             <div class="btn-group">
               <button class="btn btn-inverse" ng-click="openDMScreen()"><i class="icon-question-sign"></i></button>
-              <div modal="DMScreenIsOpen" close="closeDMScreen()" options="{backdropFade: true,    dialogFade:true}">
+              <div modal="DMScreenIsOpen" close="closeDMScreen()" options="{backdropFade: true,dialogFade:true, dialogClass:'modal dm-screen'}">
                 <div ng-include src="'partials/dmscreen.html'"></div>
               </div>
               <button ng-repeat="diceSize in [4,6,8,10,12,20,100]" ng-click="roll(diceSize)" class="btn">d{{diceSize}}</button>
