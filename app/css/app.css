@@ -45,6 +45,12 @@ body {
   margin-left: -40%;
 }
 
+caption {
+  font-weight: bold;
+  font-size: 1.4em;
+  font-variant: small-caps;
+}
+
 /* Initiative Controller */
 .hp-form {
   display: inline-block;
