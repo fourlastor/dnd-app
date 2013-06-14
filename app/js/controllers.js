@@ -80,7 +80,8 @@ angular.module('dndApp.controllers', [])
     }
 
     $scope.rollsHistory = function() {
-      return $scope.rolls.join(" ");
+      var copy = [].concat($scope.rolls);
+      return copy.reverse().join(" ");
     }
 
   }]);
