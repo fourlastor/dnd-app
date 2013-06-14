@@ -40,7 +40,7 @@
               </div>
               <button ng-repeat="diceSize in [4,6,8,10,12,20,100]" ng-click="roll(diceSize)" class="btn">d{{diceSize}}</button>
             </div>
-            <input type="text" id="last-roll" class="input-mini text-center" value="{{lastRoll()}}" readonly="readonly" popover="{{rollsHistory()}}" popover-placement="top" popover-trigger="mouseenter">
+            <input type="text" id="last-roll" class="input-mini text-center" value="{{lastRoll()}}" readonly="readonly" popover="{{rollsHistory()}}" popover-placement="left" popover-trigger="mouseenter">
             <div class="btn-group">
               <button class="btn btn-danger" ng-click="clearRolls()"><i class="icon-ban-circle"></i></button>
             </div>
