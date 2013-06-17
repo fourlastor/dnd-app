@@ -7,3 +7,7 @@ angular.module('dndApp', ['dndApp.filters', 'dndApp.services', 'dndApp.directive
     $routeProvider.when('/initiative', {templateUrl: 'partials/initiative.html', controller: 'InitiativeCtrl', activeNav: 'initiative'});
     $routeProvider.otherwise({redirectTo: '/initiative'});
   }]);
+
+  window.onbeforeunload = function(e) {
+    return "Se procedi, perderai ogni modifica.";
+  }
