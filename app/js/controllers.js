@@ -8,11 +8,6 @@ angular.module('dndApp.controllers', [])
     $rootScope.currentTab = 'initiative';
 
     $scope.chars = [];
-    // $scope.chars = [
-    //   {name: 'Vrael', initiative: 27, hp: 18, hpMax: 90},
-    //   {name: 'Drago rosso', initiative: 15, hp: 88, hpMax: 120},
-    //   {name: 'Lester',initiative: 17, hp: 26, hpMax: 54},
-    // ];
 
     $scope.addChar = function() {
       var newChar = {};
